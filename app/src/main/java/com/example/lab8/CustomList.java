@@ -26,11 +26,10 @@ public class CustomList extends ArrayAdapter<City> {
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-
         View view = convertView;
 
-        if(view == null){
-            view = LayoutInflater.from(context).inflate(R.layout.content, parent,false);
+        if (view == null) {
+            view = LayoutInflater.from(context).inflate(R.layout.content, parent, false);
         }
 
         City city = cities.get(position);
@@ -42,7 +41,6 @@ public class CustomList extends ArrayAdapter<City> {
         provinceName.setText(city.getProvinceName());
 
         return view;
-
     }
     private CustomList list;
     /**
@@ -54,12 +52,23 @@ public class CustomList extends ArrayAdapter<City> {
         return list;
     }s
 
-    public int getCount(){
+    public boolean hasCity(City city) {
+        return cities.contains(city);
+    }
+
+    public void deleteCity(City city) {
+        cities.remove(city);
+    }
+
+    public int countCities() {
         return cities.size();
     }
 
-    public void addCity(City city){
-
+    /**
+     * Adds a city object to the list.
+     * @param city The city object to add.
+     */
+    public void addCity(City city) {
+        cities.add(city);
     }
-
 }
