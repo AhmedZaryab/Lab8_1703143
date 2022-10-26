@@ -44,6 +44,15 @@ public class CustomList extends ArrayAdapter<City> {
         return view;
 
     }
+    private CustomList list;
+    /**
+     * create a mocklist for my citylist
+     * @return
+     */
+    public CustomList MockCityList(){
+        list = new CustomList(null,new ArrayList<>());
+        return list;
+    }s
 
     public int getCount(){
         return cities.size();
