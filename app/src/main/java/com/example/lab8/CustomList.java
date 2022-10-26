@@ -47,10 +47,10 @@ public class CustomList extends ArrayAdapter<City> {
      * create a mocklist for my citylist
      * @return
      */
-    public CustomList MockCityList(){
-        list = new CustomList(null,new ArrayList<>());
+    public CustomList MockCityList() {
+        list = new CustomList(null, new ArrayList<>());
         return list;
-    }s
+    }
 
     public boolean hasCity(City city) {
         return cities.contains(city);
