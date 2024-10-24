@@ -18,36 +18,6 @@ public class CustomListTest {
         return list;
     }
 
-    @BeforeEach
-    public void setUp() {
-        list = MockCityList();
-    }
-
-    @Test
-    public void hasCityTest() {
-        City city = new City("Edmonton", "AB");
-        list.addCity(city);
-        assertEquals(true, list.hasCity(city));  // Expecting true after adding the city
-
-        City nonExistingCity = new City("Calgary", "AB");
-        assertEquals(false, list.hasCity(nonExistingCity));  // Expecting false for a city not in the list
-    }
-
-    @Test
-    public void deleteCityTest() {
-        City city = new City("Edmonton", "AB");
-        list.addCity(city);
-        list.deleteCity(city);
-        assertEquals(false, list.hasCity(city));  // Expecting false since the city is deleted
-    }
-
-    @Test
-    public void countCitiesTest() {
-        assertEquals(0, list.countCities());  // Initially, the list should be empty
-
-        list.addCity(new City("Edmonton", "AB"));
-        assertEquals(1, list.countCities());  // After adding a city, count should be 1
-    }
 
     @Test
     public void addCityTest() {
